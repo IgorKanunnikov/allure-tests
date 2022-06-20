@@ -29,8 +29,8 @@ public class WebSteps {
     public void openIssueTab() {
         $(partialLinkText("Issues")).click();
     }
-    @Step("Проверяем что существует Issue с номером {num}")
-    public void checkIssueWithNumber(Integer num) {
-        $(withText("#3")).should(Condition.exist);
+    @Step("Проверяем что существует Issue с названием {text}")
+    public void checkIssueWithName(String text) {
+        $(withText("Test")).should(Condition.exist);
     }
 }

@@ -14,7 +14,7 @@ import static org.openqa.selenium.By.partialLinkText;
 public class LambdaAndAnnotatedTests {
 
     private final String REP = "IgorKanunnikov/qa_guru_1";
-    private final Integer issueNumberCheck = 3;
+    private final String issueNameCheck = "Test";
     WebSteps steps = new WebSteps();
 
     @Test
@@ -34,8 +34,8 @@ public class LambdaAndAnnotatedTests {
         step("Кликаем и открываем Issues", () -> {
             $(partialLinkText("Issues")).click();
         });
-        step("Проверяем что существует Issue с номером " + issueNumberCheck, () -> {
-            $(withText("#" + issueNumberCheck)).should(Condition.exist);
+        step("Проверяем что существует Issue с названием " + issueNameCheck, () -> {
+            $(withText(issueNameCheck)).should(Condition.exist);
         });
     }
 
@@ -48,7 +48,7 @@ public class LambdaAndAnnotatedTests {
         steps.searchForRep(REP);
         steps.openRepLink(REP);
         steps.openIssueTab();
-        steps.checkIssueWithNumber(issueNumberCheck);
+        steps.checkIssueWithName(issueNameCheck);
     }
 }
 
