@@ -24,6 +24,6 @@ public class SelenideTest {
         $(".header-search-input").submit();
         $(linkText("IgorKanunnikov/qa_guru_1")).click();
         $(partialLinkText("Issues")).click();
-        $(withText("#4")).should(Condition.exist);
+        $(withText("#3")).should(Condition.exist);
     }
 }
